@@ -29,4 +29,11 @@ public class Book {
     @JoinColumn(name = "author_id", nullable = false)
     @JsonBackReference
     private Author author;
+
+    public Book(String title, String genre, int publishedYear, Author author) {
+        this.title = title;
+        this.genre = genre;
+        this.published_year = publishedYear;
+        this.author = author;
+    }
 }

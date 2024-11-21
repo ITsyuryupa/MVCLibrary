@@ -25,4 +25,8 @@ public class Author {
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Book> books;
+
+    public Author(String name) {
+        this.name = name;
+    }
 }

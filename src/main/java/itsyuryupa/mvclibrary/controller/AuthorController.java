@@ -16,8 +16,12 @@ import java.util.Optional;
 @RequestMapping("/authors")
 public class AuthorController {
 
-    @Autowired
-    private AuthorService authorService;
+
+    private final AuthorService authorService;
+
+    public AuthorController(AuthorService authorService) {
+        this.authorService = authorService;
+    }
 
     @JsonView(Views.BookSummary.class)
     @GetMapping
